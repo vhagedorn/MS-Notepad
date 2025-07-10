@@ -13,7 +13,9 @@ SOURCES=notepad.rc   \
         npmisc.c     \
         npprint.c    \
         npdate.c     \
-        nputf.c
+        nputf.c      \
+        uniconv.c    \
+        uconvert.c
 
 
 C_DEFINES=-DWIN32 -DNT -DUNICODE -D_UNICODE

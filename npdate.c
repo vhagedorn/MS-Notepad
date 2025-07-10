@@ -33,10 +33,12 @@ VOID FAR InsertDateTime (BOOL fCrlf)
        //Get the date format that matches the edit control reading direction.
        if (GetWindowLong(hwndEdit, GWL_EXSTYLE) & WS_EX_RTLREADING) {
            dwFlags |= DATE_RTLREADING;
-           lstrcat(szDateTime, TEXT("\x200F")); // RLM
+           szDateTime[lstrlen(szDateTime)] = 0x200F; // RLM
+           szDateTime[lstrlen(szDateTime)+1] = 0;
        } else {
            dwFlags |= DATE_LTRREADING;
-           lstrcat(szDateTime, TEXT("\x200E")); // LRM
+           szDateTime[lstrlen(szDateTime)] = 0x200E; // LRM
+           szDateTime[lstrlen(szDateTime)+1] = 0;
        }
    }
 

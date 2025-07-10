@@ -4,7 +4,15 @@
 #include <cderr.h>
 #include <winnlsp.h>   // for NORM_STOP_ON_NULL
 
+// Define NORM_STOP_ON_NULL if not available
+#ifndef NORM_STOP_ON_NULL
+#define NORM_STOP_ON_NULL 0x10000000
+#endif
+
 #include <string.h>
+
+// Include TCHAR function fixes
+#include "tchar_fixes.h"
 
 //
 // We need to define BYTE_ORDER_MARK, and figure
